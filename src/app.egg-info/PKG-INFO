@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: app
+Version: 0.0.0
+Author: Cerutti Lucia
+Classifier: Programming Languaje :: Python :: 3
+Requires-Python: >=3.6

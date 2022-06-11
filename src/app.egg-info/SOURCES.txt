@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/app/app.py
+src/app.egg-info/PKG-INFO
+src/app.egg-info/SOURCES.txt
+src/app.egg-info/dependency_links.txt
+src/app.egg-info/not-zip-safe
+src/app.egg-info/requires.txt
+src/app.egg-info/top_level.txt

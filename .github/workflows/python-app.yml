@@ -4,17 +4,16 @@
 name: Python application
 
 on:
-  - push
-  - pull_request
+  push:
+    branches: main
+  pull_request:
+    branches: main
+  workflow_dispatch:
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    
-    environment: 
-      name: deploy_to_dev
-      url: https://murmuring-escarpment-98975.herokuapp.com
     
     steps:
     - uses: actions/checkout@v3
@@ -49,3 +48,16 @@ jobs:
         export PYTHONPATH=src
         git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
         git push heroku HEAD:main -f
+        
+  DEV:
+    name: Deploy to dev
+    needs: [build]
+    runs-on: ubuntu-latest
+    
+    environment: 
+      name: deploy_to_dev
+      url: https://murmuring-escarpment-98975.herokuapp.com
+      
+    steps:
+      - name: Deploy
+        run: echo I am deploying!

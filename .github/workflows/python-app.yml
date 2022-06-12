@@ -12,7 +12,9 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    environment: deploy_to_dev
+    environment: 
+      name: deploy_to_dev
+      url: https://murmuring-escarpment-98975.herokuapp.com
     
     steps:
     - uses: actions/checkout@v3
